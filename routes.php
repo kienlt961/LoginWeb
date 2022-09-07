@@ -1,6 +1,7 @@
 <?php
 $controllers = array(
-  'pages' => ['home', 'login', 'signup', 'error']
+  'pages' => ['index', 'login', 'signup', 'error'],
+
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi
@@ -11,7 +12,6 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
   $action = 'error';
 }
 
-
 // Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers/' . ucwords($controller) . 'Controller.php');
 
@@ -21,5 +21,8 @@ $klass = str_replace('_', '', ucwords($controller, '_')) . 'Controller';
 // echo $controller;
 // echo $klass;
 // exit();
+
+
 $controller = new $klass;   //page = new PagesController;
+
 $controller->$action();     //page->error;

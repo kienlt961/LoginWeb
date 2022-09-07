@@ -1,9 +1,9 @@
 <?php
 
-    require_once '../models/User.php';
-    require_once '../helpers/session_helper.php';
-    require_once 'controllers/base_controller.php';
-    require_once '../connection.php';
+    require_once './models/User.php';
+    require_once './helpers/session_helper.php';
+    require_once 'controllers/BaseController.php';
+    require_once './connection.php';
 
     class UsersController extends BaseController {
 

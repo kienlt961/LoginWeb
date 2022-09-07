@@ -11,6 +11,6 @@ if (isset($_GET['controller'])) {
   }
 } else {
   $controller = 'pages';
-  $action = 'home';
+  $action = 'index';
 }
 require_once('routes.php');
